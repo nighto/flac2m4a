@@ -1,0 +1,26 @@
+flac2m4a by Arlindo "Nighto" Pereira
+First posted on http://nighto.net/convertendo-flac-para-mp4-aac/
+(C) 2008-2010
+Licensed on GPLv3
+
+
+
+flac2m4a is a shell script to convert FLAC (Free Lossless Audio Codec) files to M4A (MPEG-4 Advanced Audio Codec) format.
+
+You can use it to convert a single .flac file to .m4a, like
+
+ flac2mp4 file.flac
+
+Additionally, you can embed a gif, jpeg or png file as a cover-art, like
+
+ flac2mp4 file.flac cover.png
+
+flac2m4a takes only one flac file as parameter (i.e. converts only one file per time). You can, however, convert all files in a given directory using a bash loop:
+
+ for i in *flac ; do flac2m4a "$i" cover.png ; done
+
+A easy way to install on Linux is making it executable and copying it to a directory in your path, like
+
+ chmod +x flac2mp4 && sudo cp flac2mp4 /usr/local/bin
+
+Enjoy.
