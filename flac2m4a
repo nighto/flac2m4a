@@ -10,22 +10,22 @@ echo ""
 if [ "$2" ]
 then
 	flac --totally-silent -d -c "$1" | faac - -o "$(pwd)/$(basename "$1" .flac).m4a" \
-	--title "$(metaflac --show-tag=TITLE "$1" | sed 's/TITLE=//g')" \
-	--artist "$(metaflac --show-tag=ARTIST "$1" | sed 's/ARTIST=//g')" \
-	--album "$(metaflac --show-tag=ALBUM "$1" | sed 's/ALBUM=//g')" \
-	--year "$(metaflac --show-tag=DATE "$1" | sed 's/DATE=//g')" \
-	--track "$(metaflac --show-tag=TRACKNUMBER "$1" | sed 's/TRACKNUMBER=//g')" \
-	--genre "$(metaflac --show-tag=GENRE "$1" | sed 's/GENRE=//g')" \
+	--title "$(metaflac --show-tag=TITLE "$1" | sed 's/TITLE=//g' | sed 's/title=//g')" \
+	--artist "$(metaflac --show-tag=ARTIST "$1" | sed 's/ARTIST=//g' | sed 's/artist=//g')" \
+	--album "$(metaflac --show-tag=ALBUM "$1" | sed 's/ALBUM=//g' | sed 's/album=//g')" \
+	--year "$(metaflac --show-tag=DATE "$1" | sed 's/DATE=//g' | sed 's/date=//g')" \
+	--track "$(metaflac --show-tag=TRACKNUMBER "$1" | sed 's/TRACKNUMBER=//g' | sed 's/tracknumber=//g')" \
+	--genre "$(metaflac --show-tag=GENRE "$1" | sed 's/GENRE=//g' | sed 's/genre=//g')" \
 	--cover-art "$2"
 elif [ "$1" ]
 then
 	flac --totally-silent -d -c "$1" | faac - -o "$(pwd)/$(basename "$1" .flac).m4a" \
-	--title "$(metaflac --show-tag=TITLE "$1" | sed 's/TITLE=//g')" \
-	--artist "$(metaflac --show-tag=ARTIST "$1" | sed 's/ARTIST=//g')" \
-	--album "$(metaflac --show-tag=ALBUM "$1" | sed 's/ALBUM=//g')" \
-	--year "$(metaflac --show-tag=DATE "$1" | sed 's/DATE=//g')" \
-	--track "$(metaflac --show-tag=TRACKNUMBER "$1" | sed 's/TRACKNUMBER=//g')" \
-	--genre "$(metaflac --show-tag=GENRE "$1" | sed 's/GENRE=//g')"
+	--title "$(metaflac --show-tag=TITLE "$1" | sed 's/TITLE=//g' | sed 's/title=//g')" \
+	--artist "$(metaflac --show-tag=ARTIST "$1" | sed 's/ARTIST=//g' | sed 's/artist=//g')" \
+	--album "$(metaflac --show-tag=ALBUM "$1" | sed 's/ALBUM=//g' | sed 's/album=//g')" \
+	--year "$(metaflac --show-tag=DATE "$1" | sed 's/DATE=//g' | sed 's/date=//g')" \
+	--track "$(metaflac --show-tag=TRACKNUMBER "$1" | sed 's/TRACKNUMBER=//g' | sed 's/tracknumber=//g')" \
+	--genre "$(metaflac --show-tag=GENRE "$1" | sed 's/GENRE=//g' | sed 's/genre=//g')"
 else
 	echo "Usage:"
 	echo "flac2mp4 file.flac [cover-art]"
