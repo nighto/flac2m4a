@@ -23,4 +23,8 @@ A easy way to install on Linux is making it executable and copying it to a direc
 
  chmod +x flac2mp4 && sudo cp flac2mp4 /usr/local/bin
 
+flac2m4a uses flac and faac to decode/encode the audio files. On Ubuntu, you can install them with
+
+ sudo apt-get install flac faac
+
 Enjoy.
