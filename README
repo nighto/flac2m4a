@@ -9,11 +9,11 @@ flac2m4a is a shell script to convert FLAC (Free Lossless Audio Codec) files to 
 
 You can use it to convert a single .flac file to .m4a, like
 
- flac2mp4 file.flac
+ flac2m4a file.flac
 
 Additionally, you can embed a gif, jpeg or png file as a cover-art, like
 
- flac2mp4 file.flac cover.png
+ flac2m4a file.flac cover.png
 
 flac2m4a takes only one flac file as parameter (i.e. converts only one file per time). You can, however, convert all files in a given directory using a bash loop:
 
@@ -21,7 +21,7 @@ flac2m4a takes only one flac file as parameter (i.e. converts only one file per 
 
 A easy way to install on Linux is making it executable and copying it to a directory in your path, like
 
- chmod +x flac2mp4 && sudo cp flac2mp4 /usr/local/bin
+ sudo cp flac2m4a /usr/local/bin && sudo chmod +x /usr/local/bin/flac2m4a
 
 flac2m4a uses flac and faac to decode/encode the audio files. On Ubuntu, you can install them with
 
